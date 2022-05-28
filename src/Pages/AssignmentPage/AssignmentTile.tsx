@@ -13,8 +13,8 @@ const AssignmentTile: FC<AssignmentTileProps> = ({ assignment }) => {
   const readableCreatedDate = convertToRedableDate(created_at);
 
   let submissionLink = "";
-  if (submissions.submission_link.length !== 0) {
-    submissionLink = submissions.submission_link;
+  if (submissions[0]) {
+    submissionLink = submissions[0].submission_link;
   }
   const [showPopup, toggleShowPopup] = useState(false);
 
@@ -48,12 +48,12 @@ const AssignmentTile: FC<AssignmentTileProps> = ({ assignment }) => {
                 </div>
                 <p className="text-red-600 mt-3">Due Date: {readableDueDate}</p>
               </div>
-              {length !== 0 && (
+              {submissions[0] && (
                 <p className="text-green-600 font-semibold px-2 py-4 whitespace-nowrap block">
                   Submitted
                 </p>
               )}
-              {length === 0 && (
+              {!submissions[0] && (
                 <p className="text-red-600 font-semibold px-2 py-4 whitespace-nowrap block">
                   Not Submitted
                 </p>

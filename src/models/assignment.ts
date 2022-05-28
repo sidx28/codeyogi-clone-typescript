@@ -1,4 +1,4 @@
-type Submission = { submission_link: string };
+type submission = { submission_link: string };
 export type Assignment = {
   assignment_id: number;
   created_at: string;
@@ -6,6 +6,6 @@ export type Assignment = {
   due_date: string;
   title: string;
   uploaded_at: string;
-  submissions: Submission;
-  id:number
+  submissions: [submission] | any;
+  id: number;
 };
