@@ -13,7 +13,7 @@ const AssignmentTile: FC<AssignmentTileProps> = ({ assignment }) => {
   const readableCreatedDate = convertToRedableDate(created_at);
 
   let submissionLink = "";
-  if (length !== 0) {
+  if (submissions.submission_link.length !== 0) {
     submissionLink = submissions.submission_link;
   }
   const [showPopup, toggleShowPopup] = useState(false);
